@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace DevFreela.Core.Entities
 {
-	internal class Project : BaseEntity
+	public class Project : BaseEntity
 	{
 		public Project(string title, string description, int idClient, int idFreelancer, decimal totalCost)
 		{
