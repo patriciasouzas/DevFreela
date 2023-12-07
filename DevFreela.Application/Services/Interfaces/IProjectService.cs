@@ -7,7 +7,7 @@ namespace DevFreela.Application.Services.Interfaces
 	public interface IProjectService
 	{
 		List<ProjectViewModel> GetAll(string query);
-		List<DetailsViewModel> GetById(int id);
+		List<ProjectDetailsViewModel> GetById(int id);
 		int Create(NewProjectInputModel inputModel);
 		void Update(UpdateProjectInputModel inputModel);
 		void Delete(int id);
