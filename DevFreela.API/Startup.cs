@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 
 namespace DevFreela.API
 {
@@ -32,7 +33,7 @@ namespace DevFreela.API
 			services.AddMvcCore().AddApiExplorer();
 			services.AddSwaggerGen(c =>
 			{
-				c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Projeto DevFreela", Version = "v1" });
+				c.SwaggerDoc("v1", new OpenApiInfo {Title="DevFreela.API",Version="v1"});
 			});
 		}
 
@@ -43,7 +44,7 @@ namespace DevFreela.API
 			{
 				app.UseDeveloperExceptionPage();
 				app.UseSwagger();
-				app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Projeto DevFreela v1"));
+				app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DevFreela.API v1"));
 			}
 			else
 			{
@@ -67,7 +68,7 @@ namespace DevFreela.API
 
 			app.UseEndpoints(endpoints =>
 			{
-				endpoints.MapRazorPages();
+				endpoints.MapControllers();
 			});
 		}
 	}
