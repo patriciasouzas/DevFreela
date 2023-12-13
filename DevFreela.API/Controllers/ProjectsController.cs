@@ -1,5 +1,4 @@
-﻿using DevFreela.API.Models;
-using DevFreela.Application.InputModels;
+﻿using DevFreela.Application.InputModels;
 using DevFreela.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -32,12 +31,12 @@ namespace DevFreela.API.Controllers
 		{
 			var project = _projectService.GetById(id);
 
-            if (project == null)
-            {
+			if (project == null)
+			{
 				return NotFound();
-            }
+			}
 
-            return Ok(project);
+			return Ok(project);
 		}
 
 		[HttpPost]

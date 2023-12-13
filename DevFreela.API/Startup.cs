@@ -33,7 +33,7 @@ namespace DevFreela.API
 			services.AddMvcCore().AddApiExplorer();
 			services.AddSwaggerGen(c =>
 			{
-				c.SwaggerDoc("v1", new OpenApiInfo {Title="DevFreela.API",Version="v1"});
+				c.SwaggerDoc("v1", new OpenApiInfo { Title = "DevFreela.API", Version = "v1" });
 			});
 		}
 

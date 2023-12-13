@@ -3,6 +3,9 @@ using DevFreela.Application.Services.Interfaces;
 using DevFreela.Application.ViewModels;
 using DevFreela.Core.Entities;
 using DevFreela.Infrastructure.Persistence;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DevFreela.Application.Services.Implementations
 {
@@ -70,7 +73,7 @@ namespace DevFreela.Application.Services.Implementations
 
 			if (project == null) return null;
 
-			var projectDetailViewModel = new ProjectDetailsViewModel(
+            var projectDetailViewModel = new ProjectDetailsViewModel(
 				project.Id,
 				project.Title,
 				project.Description,
