@@ -1,6 +1,5 @@
 ﻿using DevFreela.Application.InputModels;
 using DevFreela.Application.ViewModels;
-using System.Collections.Generic;
 
 namespace DevFreela.Application.Services.Interfaces
 {
