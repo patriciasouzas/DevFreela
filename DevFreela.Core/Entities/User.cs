@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-
-namespace DevFreela.Core.Entities
+﻿namespace DevFreela.Core.Entities
 {
 	public class User : BaseEntity
 	{
@@ -13,6 +9,7 @@ namespace DevFreela.Core.Entities
 			BirthDate = birthDate;
 			Active = true;
 			CreatedAt = DateTime.Now;
+
 			Skills = new List<UserSkill>();
 			OwnedProjects = new List<Project>();
 			FreelanceProjects = new List<Project>();
