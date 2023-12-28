@@ -1,4 +1,4 @@
-using DevFreela.API.Models;
+using DevFreela.Application.Commands.CreateProject;
 using DevFreela.Application.Services.Implementations;
 using DevFreela.Application.Services.Interfaces;
 using DevFreela.Infrastructure.Persistence;
@@ -24,8 +24,6 @@ namespace DevFreela.API
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
-			services.Configure<OpeningTimeOption>(Configuration.GetSection("OpeningTime"));
-
 			var connectionString = Configuration.GetConnectionString("DevFreelaCs");
 			services.AddDbContext<DevFreelaDbContext>(options =>
 			{
@@ -35,6 +33,12 @@ namespace DevFreela.API
 			services.AddScoped<IProjectService, ProjectService>();
 			services.AddScoped<IUserService, UserService>();
 			services.AddScoped<ISkillService, SkillService>();
+
+			services.AddControllers();
+
+			services.AddMediatR(options => options.RegisterServicesFromAssembly(typeof(CreateProjectCommand).Assembly));
+
+			//services.AddMediatR(typeof(CreateProjectCommand));
 
 			services.AddRazorPages();
 			services.AddMvcCore().AddApiExplorer();
