@@ -1,7 +1,5 @@
-﻿using DevFreela.Application.InputModels;
-using DevFreela.Application.Services.Interfaces;
+﻿using DevFreela.Application.Services.Interfaces;
 using DevFreela.Application.ViewModels;
-using DevFreela.Core.Entities;
 using DevFreela.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,19 +12,6 @@ namespace DevFreela.Application.Services.Implementations
 		{
 			_dbContext = dbContext;
 		}
-
-		public void CreateComment(CreateCommentInputModel inputModel)
-		{
-			var comment = new ProjectComment(
-				inputModel.Content,
-				inputModel.IdProject,
-				inputModel.IdUser
-				);
-
-			_dbContext.ProjectComments.Add(comment);
-			_dbContext.SaveChanges();
-		}
-
 		public void Finish(int id)
 		{
 			var project = _dbContext.Projects.SingleOrDefault(p => p.Id == id);
