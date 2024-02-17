@@ -4,12 +4,12 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DevFreela.Infrastructure.Persistence.Configurations
 {
-	internal class UserSkillConfigurations : IEntityTypeConfiguration<UserSkill>
+	public class UserSkillConfigurations : IEntityTypeConfiguration<UserSkill>
 	{
 		public void Configure(EntityTypeBuilder<UserSkill> builder)
 		{
 			builder
-				.HasKey(p => p.Id);
+				.HasKey(s => s.Id);
 		}
 	}
 }

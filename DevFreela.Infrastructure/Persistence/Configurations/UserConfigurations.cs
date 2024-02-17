@@ -4,12 +4,12 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DevFreela.Infrastructure.Persistence.Configurations
 {
-	internal class UserConfigurations : IEntityTypeConfiguration<User>
+	public class UserConfigurations : IEntityTypeConfiguration<User>
 	{
 		public void Configure(EntityTypeBuilder<User> builder)
 		{
 			builder
-			.HasKey(p => p.Id);
+			.HasKey(s => s.Id);
 
 			builder
 				.HasMany(u => u.Skills)
