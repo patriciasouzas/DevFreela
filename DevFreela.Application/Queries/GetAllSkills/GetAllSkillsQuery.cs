@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DevFreela.Application.ViewModels;
+using MediatR;
 
 namespace DevFreela.Application.Queries.GetAllSkills
 {
-	internal class GetAllSkillsQuery
+	public class GetAllSkillsQuery : IRequest<List<SkillViewModel>>
 	{
 	}
 }
