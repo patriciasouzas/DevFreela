@@ -1,6 +1,4 @@
 using DevFreela.Application.Commands.CreateProject;
-using DevFreela.Application.Services.Implementations;
-using DevFreela.Application.Services.Interfaces;
 using DevFreela.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,10 +27,6 @@ namespace DevFreela.API
 			{
 				options.UseMySql(connectionString, new MySqlServerVersion(new System.Version(5, 7)));
 			});
-
-			services.AddScoped<IProjectService, ProjectService>();
-			services.AddScoped<IUserService, UserService>();
-			services.AddScoped<ISkillService, SkillService>();
 
 			services.AddControllers();
 
