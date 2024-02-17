@@ -4,10 +4,10 @@ using MediatR;
 
 namespace DevFreela.Application.Commands.CreateProject
 {
-	public class CreateProjectHandler : IRequestHandler<CreateProjectCommand, int>
+	public class CreateProjectCommandHandler : IRequestHandler<CreateProjectCommand, int>
 	{
 		private readonly DevFreelaDbContext _dbContext;
-		public CreateProjectHandler(DevFreelaDbContext dbContext)
+		public CreateProjectCommandHandler(DevFreelaDbContext dbContext)
 		{
 			_dbContext = dbContext;
 		}
