@@ -9,7 +9,6 @@ namespace DevFreela.Core.Entities
 			Content = content;
 			IdProject = idProject;
 			IdUser = idUser;
-			CreatedAt = DateTime.Now;
 		}
 
 		public string Content { get; private set; }
