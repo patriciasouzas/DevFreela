@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DevFreela.Core.Exceptions
+﻿namespace DevFreela.Core.Exceptions
 {
 	public class ProjectAlreadyStartedException : Exception
 	{
