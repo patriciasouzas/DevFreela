@@ -8,7 +8,6 @@ namespace DevFreela.Application.Queries.GetAllSkills
 {
 	public class GetAllSkillsQueryHandler : IRequestHandler<GetAllSkillsQuery, List<SkillViewModel>>
 	{
-		//private readonly DevFreelaDbContext _dbContext;
 		private readonly string _connectionString;
 		public GetAllSkillsQueryHandler(IConfiguration configuration)
 		{

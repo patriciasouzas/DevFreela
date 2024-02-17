@@ -7,7 +7,7 @@ namespace DevFreela.Application.Queries.GetAllProjects
 {
 	public class GetAllProjectsQueryHandler : IRequestHandler<GetAllProjectsQuery, List<ProjectViewModel>>
 	{
-		public readonly DevFreelaDbContext _dbContext;
+		private readonly DevFreelaDbContext _dbContext;
 		public GetAllProjectsQueryHandler(DevFreelaDbContext dbContext)
 		{
 			_dbContext = dbContext;
