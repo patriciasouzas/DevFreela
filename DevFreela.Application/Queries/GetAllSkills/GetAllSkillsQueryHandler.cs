@@ -1,30 +1,19 @@
-﻿using Dapper;
-using DevFreela.Application.ViewModels;
+﻿using DevFreela.Core.DTOs;
+using DevFreela.Core.Repositories;
 using MediatR;
-using Microsoft.Extensions.Configuration;
-using MySql.Data.MySqlClient;
 
 namespace DevFreela.Application.Queries.GetAllSkills
 {
-	public class GetAllSkillsQueryHandler : IRequestHandler<GetAllSkillsQuery, List<SkillViewModel>>
+	public class GetAllSkillsQueryHandler : IRequestHandler<GetAllSkillsQuery, List<SkillDto>>
 	{
-		private readonly string _connectionString;
-		public GetAllSkillsQueryHandler(IConfiguration configuration)
+		private readonly ISkillRepository _skillRepository;
+		public GetAllSkillsQueryHandler(ISkillRepository skillRepository)
 		{
-			_connectionString = configuration.GetConnectionString("DevFreelaCs");
+			_skillRepository = skillRepository;
 		}
-		public async Task<List<SkillViewModel>> Handle(GetAllSkillsQuery request, CancellationToken cancellationToken)
+		public async Task<List<SkillDto>> Handle(GetAllSkillsQuery request, CancellationToken cancellationToken)
 		{
-			using var mySqlConnection = new MySqlConnection(_connectionString);
-			{
-				mySqlConnection.Open();
-
-				var script = "SELECT Id, Description FROM Skills";
-
-				var skills = await mySqlConnection.QueryAsync<SkillViewModel>(script);
-
-				return skills.ToList();
-			}
+			return await _skillRepository.GetAll();
 		}
 	}
 }
