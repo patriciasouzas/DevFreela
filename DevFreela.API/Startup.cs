@@ -1,7 +1,10 @@
 using DevFreela.Application.Commands.CreateProject;
+using DevFreela.Application.Validators;
 using DevFreela.Core.Repositories;
 using DevFreela.Infrastructure.Persistence;
 using DevFreela.Infrastructure.Persistence.Repositories;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -35,6 +38,10 @@ namespace DevFreela.API
 			services.AddScoped<ISkillRepository, SkillRepository>();
 
 			services.AddControllers();
+
+			services.AddFluentValidationAutoValidation();
+			services.AddFluentValidationClientsideAdapters();
+			services.AddValidatorsFromAssemblyContaining<CreateUserCommandValidator>();
 
 			services.AddMediatR(options => options.RegisterServicesFromAssembly(typeof(CreateProjectCommand).Assembly));
 
