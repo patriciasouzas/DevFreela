@@ -9,227 +9,237 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DevFreela.Infrastructure.Persistence.Migrations
 {
-    [DbContext(typeof(DevFreelaDbContext))]
-    partial class DevFreelaDbContextModelSnapshot : ModelSnapshot
-    {
-        protected override void BuildModel(ModelBuilder modelBuilder)
-        {
+	[DbContext(typeof(DevFreelaDbContext))]
+	partial class DevFreelaDbContextModelSnapshot : ModelSnapshot
+	{
+		protected override void BuildModel(ModelBuilder modelBuilder)
+		{
 #pragma warning disable 612, 618
-            modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.3")
-                .HasAnnotation("Relational:MaxIdentifierLength", 64);
+			modelBuilder
+				.HasAnnotation("ProductVersion", "7.0.3")
+				.HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("DevFreela.Core.Entities.Project", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+			modelBuilder.Entity("DevFreela.Core.Entities.Project", b =>
+				{
+					b.Property<int>("Id")
+						.ValueGeneratedOnAdd()
+						.HasColumnType("int");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime(6)");
+					b.Property<DateTime>("CreatedAt")
+						.HasColumnType("datetime(6)");
 
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+					b.Property<string>("Description")
+						.IsRequired()
+						.HasColumnType("longtext");
 
-                    b.Property<DateTime?>("FinishedAt")
-                        .HasColumnType("datetime(6)");
+					b.Property<DateTime?>("FinishedAt")
+						.HasColumnType("datetime(6)");
 
-                    b.Property<int>("IdClient")
-                        .HasColumnType("int");
+					b.Property<int>("IdClient")
+						.HasColumnType("int");
 
-                    b.Property<int>("IdFreelancer")
-                        .HasColumnType("int");
+					b.Property<int>("IdFreelancer")
+						.HasColumnType("int");
 
-                    b.Property<DateTime?>("StartedAt")
-                        .HasColumnType("datetime(6)");
+					b.Property<DateTime?>("StartedAt")
+						.HasColumnType("datetime(6)");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
+					b.Property<int>("Status")
+						.HasColumnType("int");
 
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+					b.Property<string>("Title")
+						.IsRequired()
+						.HasColumnType("longtext");
 
-                    b.Property<decimal>("TotalCost")
-                        .HasColumnType("decimal(65,30)");
+					b.Property<decimal>("TotalCost")
+						.HasColumnType("decimal(65,30)");
 
-                    b.HasKey("Id");
+					b.HasKey("Id");
 
-                    b.HasIndex("IdClient");
+					b.HasIndex("IdClient");
 
-                    b.HasIndex("IdFreelancer");
+					b.HasIndex("IdFreelancer");
 
-                    b.ToTable("Projects");
-                });
+					b.ToTable("Projects");
+				});
 
-            modelBuilder.Entity("DevFreela.Core.Entities.ProjectComment", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+			modelBuilder.Entity("DevFreela.Core.Entities.ProjectComment", b =>
+				{
+					b.Property<int>("Id")
+						.ValueGeneratedOnAdd()
+						.HasColumnType("int");
 
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+					b.Property<string>("Content")
+						.IsRequired()
+						.HasColumnType("longtext");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime(6)");
+					b.Property<DateTime>("CreatedAt")
+						.HasColumnType("datetime(6)");
 
-                    b.Property<int>("IdProject")
-                        .HasColumnType("int");
+					b.Property<int>("IdProject")
+						.HasColumnType("int");
 
-                    b.Property<int>("IdUser")
-                        .HasColumnType("int");
+					b.Property<int>("IdUser")
+						.HasColumnType("int");
 
-                    b.HasKey("Id");
+					b.HasKey("Id");
 
-                    b.HasIndex("IdProject");
+					b.HasIndex("IdProject");
 
-                    b.HasIndex("IdUser");
+					b.HasIndex("IdUser");
 
-                    b.ToTable("ProjectComments");
-                });
+					b.ToTable("ProjectComments");
+				});
 
-            modelBuilder.Entity("DevFreela.Core.Entities.Skill", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+			modelBuilder.Entity("DevFreela.Core.Entities.Skill", b =>
+				{
+					b.Property<int>("Id")
+						.ValueGeneratedOnAdd()
+						.HasColumnType("int");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime(6)");
+					b.Property<DateTime>("CreatedAt")
+						.HasColumnType("datetime(6)");
 
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+					b.Property<string>("Description")
+						.IsRequired()
+						.HasColumnType("longtext");
 
-                    b.HasKey("Id");
+					b.HasKey("Id");
 
-                    b.ToTable("Skills");
-                });
+					b.ToTable("Skills");
+				});
 
-            modelBuilder.Entity("DevFreela.Core.Entities.User", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+			modelBuilder.Entity("DevFreela.Core.Entities.User", b =>
+				{
+					b.Property<int>("Id")
+						.ValueGeneratedOnAdd()
+						.HasColumnType("int");
 
-                    b.Property<bool>("Active")
-                        .HasColumnType("tinyint(1)");
+					b.Property<bool>("Active")
+						.HasColumnType("tinyint(1)");
 
-                    b.Property<DateTime>("BirthDate")
-                        .HasColumnType("datetime(6)");
+					b.Property<DateTime>("BirthDate")
+						.HasColumnType("datetime(6)");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime(6)");
+					b.Property<DateTime>("CreatedAt")
+						.HasColumnType("datetime(6)");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+					b.Property<string>("Email")
+						.IsRequired()
+						.HasColumnType("longtext");
 
-                    b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+					b.Property<string>("FullName")
+						.IsRequired()
+						.HasColumnType("longtext");
 
-                    b.HasKey("Id");
+					b.Property<string>("Password")
+						.IsRequired()
+						.HasColumnType("longtext");
 
-                    b.ToTable("Users");
-                });
+					b.Property<string>("Role")
+						.IsRequired()
+						.HasColumnType("longtext");
 
-            modelBuilder.Entity("DevFreela.Core.Entities.UserSkill", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+					b.HasKey("Id");
 
-                    b.Property<int>("IdSkill")
-                        .HasColumnType("int");
+					b.ToTable("Users");
+				});
 
-                    b.Property<int>("IdUser")
-                        .HasColumnType("int");
+			modelBuilder.Entity("DevFreela.Core.Entities.UserSkill", b =>
+				{
+					b.Property<int>("Id")
+						.ValueGeneratedOnAdd()
+						.HasColumnType("int");
 
-                    b.Property<int?>("SkillId")
-                        .HasColumnType("int");
+					b.Property<int>("IdSkill")
+						.HasColumnType("int");
 
-                    b.HasKey("Id");
+					b.Property<int>("IdUser")
+						.HasColumnType("int");
 
-                    b.HasIndex("IdSkill");
+					b.Property<int>("SkillId")
+						.HasColumnType("int");
 
-                    b.HasIndex("SkillId");
+					b.HasKey("Id");
 
-                    b.ToTable("UserSkills");
-                });
+					b.HasIndex("IdSkill");
 
-            modelBuilder.Entity("DevFreela.Core.Entities.Project", b =>
-                {
-                    b.HasOne("DevFreela.Core.Entities.User", "Client")
-                        .WithMany("OwnedProjects")
-                        .HasForeignKey("IdClient")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+					b.HasIndex("SkillId");
 
-                    b.HasOne("DevFreela.Core.Entities.User", "Freelancer")
-                        .WithMany("FreelanceProjects")
-                        .HasForeignKey("IdFreelancer")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+					b.ToTable("UserSkills");
+				});
 
-                    b.Navigation("Client");
+			modelBuilder.Entity("DevFreela.Core.Entities.Project", b =>
+				{
+					b.HasOne("DevFreela.Core.Entities.User", "Client")
+						.WithMany("OwnedProjects")
+						.HasForeignKey("IdClient")
+						.OnDelete(DeleteBehavior.Restrict)
+						.IsRequired();
 
-                    b.Navigation("Freelancer");
-                });
+					b.HasOne("DevFreela.Core.Entities.User", "Freelancer")
+						.WithMany("FreelanceProjects")
+						.HasForeignKey("IdFreelancer")
+						.OnDelete(DeleteBehavior.Restrict)
+						.IsRequired();
 
-            modelBuilder.Entity("DevFreela.Core.Entities.ProjectComment", b =>
-                {
-                    b.HasOne("DevFreela.Core.Entities.Project", "Project")
-                        .WithMany("Comments")
-                        .HasForeignKey("IdProject")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+					b.Navigation("Client");
 
-                    b.HasOne("DevFreela.Core.Entities.User", "User")
-                        .WithMany("Comments")
-                        .HasForeignKey("IdUser")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+					b.Navigation("Freelancer");
+				});
 
-                    b.Navigation("Project");
+			modelBuilder.Entity("DevFreela.Core.Entities.ProjectComment", b =>
+				{
+					b.HasOne("DevFreela.Core.Entities.Project", "Project")
+						.WithMany("Comments")
+						.HasForeignKey("IdProject")
+						.OnDelete(DeleteBehavior.Cascade)
+						.IsRequired();
 
-                    b.Navigation("User");
-                });
+					b.HasOne("DevFreela.Core.Entities.User", "User")
+						.WithMany("Comments")
+						.HasForeignKey("IdUser")
+						.OnDelete(DeleteBehavior.Cascade)
+						.IsRequired();
 
-            modelBuilder.Entity("DevFreela.Core.Entities.UserSkill", b =>
-                {
-                    b.HasOne("DevFreela.Core.Entities.User", null)
-                        .WithMany("Skills")
-                        .HasForeignKey("IdSkill")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+					b.Navigation("Project");
 
-                    b.HasOne("DevFreela.Core.Entities.Skill", "Skill")
-                        .WithMany()
-                        .HasForeignKey("SkillId");
+					b.Navigation("User");
+				});
 
-                    b.Navigation("Skill");
-                });
+			modelBuilder.Entity("DevFreela.Core.Entities.UserSkill", b =>
+				{
+					b.HasOne("DevFreela.Core.Entities.User", null)
+						.WithMany("Skills")
+						.HasForeignKey("IdSkill")
+						.OnDelete(DeleteBehavior.Restrict)
+						.IsRequired();
 
-            modelBuilder.Entity("DevFreela.Core.Entities.Project", b =>
-                {
-                    b.Navigation("Comments");
-                });
+					b.HasOne("DevFreela.Core.Entities.Skill", "Skill")
+						.WithMany()
+						.HasForeignKey("SkillId")
+						.OnDelete(DeleteBehavior.Cascade)
+						.IsRequired();
 
-            modelBuilder.Entity("DevFreela.Core.Entities.User", b =>
-                {
-                    b.Navigation("Comments");
+					b.Navigation("Skill");
+				});
 
-                    b.Navigation("FreelanceProjects");
+			modelBuilder.Entity("DevFreela.Core.Entities.Project", b =>
+				{
+					b.Navigation("Comments");
+				});
 
-                    b.Navigation("OwnedProjects");
+			modelBuilder.Entity("DevFreela.Core.Entities.User", b =>
+				{
+					b.Navigation("Comments");
 
-                    b.Navigation("Skills");
-                });
+					b.Navigation("FreelanceProjects");
+
+					b.Navigation("OwnedProjects");
+
+					b.Navigation("Skills");
+				});
 #pragma warning restore 612, 618
-        }
-    }
+		}
+	}
 }
