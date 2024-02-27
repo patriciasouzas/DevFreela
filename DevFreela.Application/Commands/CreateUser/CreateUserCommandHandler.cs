@@ -17,7 +17,9 @@ namespace DevFreela.Application.Commands.CreateUser
 			var user = new User(
 				request.FullName,
 				request.Email,
-				request.BirthDate);
+				request.BirthDate,
+				request.Password,
+				request.Role);
 
 			await _dbContext.Users.AddAsync(user);
 			await _dbContext.SaveChangesAsync();
