@@ -85,8 +85,9 @@ namespace DevFreela.API
 						new string[]{}
 					}
 				});
+			});
 
-				services
+			services
 				.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 				.AddJwtBearer(opt =>
 				{
@@ -99,10 +100,11 @@ namespace DevFreela.API
 
 						ValidIssuer = Configuration["Jwt:Issuer"],
 						ValidAudience = Configuration["Jwt:Audience"],
-						IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+						IssuerSigningKey = new SymmetricSecurityKey(
+							Encoding.UTF8.GetBytes(Configuration["Jwt:Key"])
+							)
 					};
 				});
-			});
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
