@@ -14,6 +14,7 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
 			_dbContext = dbContext;
 			_connectionString = configuration.GetConnectionString("DevFreelaCs");
 		}
+
 		public async Task<User> GetByIdAsync(int id)
 		{
 			return await _dbContext.Users.SingleOrDefaultAsync(u => u.Id == id);
