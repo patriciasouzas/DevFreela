@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DevFreela.Application.ViewModels
+﻿namespace DevFreela.Application.ViewModels
 {
 	public class ProjectDetailsViewModel
 	{
@@ -17,12 +15,12 @@ namespace DevFreela.Application.ViewModels
 		}
 
 		public int Id { get; private set; }
-        public string Title { get; private set; }
-        public string Description { get; private set; }
-        public decimal TotalCost { get; set; }
-        public DateTime? StartedAt { get; private set; }
-        public DateTime? FinishedAt { get; private set; }
+		public string Title { get; private set; }
+		public string Description { get; private set; }
+		public decimal TotalCost { get; set; }
+		public DateTime? StartedAt { get; private set; }
+		public DateTime? FinishedAt { get; private set; }
 		public string ClientFullName { get; private set; }
-		public string FreelancerFullName { get; private set;}
-    }
+		public string FreelancerFullName { get; private set; }
+	}
 }
