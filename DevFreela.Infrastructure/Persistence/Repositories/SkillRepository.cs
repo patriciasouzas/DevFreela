@@ -19,7 +19,7 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
 			{
 				mySqlConnection.Open();
 
-				var script = "SELECT Id, Description FROM Skills";
+				var script = "SELECT IdProject, Description FROM Skills";
 
 				var skills = await mySqlConnection.QueryAsync<SkillDto>(script);
 

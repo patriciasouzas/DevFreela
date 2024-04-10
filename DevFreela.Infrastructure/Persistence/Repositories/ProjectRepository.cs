@@ -42,7 +42,7 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
 			{
 				mySqlConnection.Open();
 
-				var script = "UPDATE Projects SET Status = @status, StartedAt = @startedat WHERE Id = @id";
+				var script = "UPDATE Projects SET Status = @status, StartedAt = @startedat WHERE IdProject = @id";
 
 				await mySqlConnection.ExecuteAsync(script, new { status = project.Status, startedAt = project.StartedAt, project.Id });
 			}
