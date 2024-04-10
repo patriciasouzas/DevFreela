@@ -39,6 +39,8 @@ namespace DevFreela.API
 				options.UseMySql(connectionString, new MySqlServerVersion(new System.Version(5, 7)));
 			});
 
+			services.AddHttpClient();
+
 			services.AddScoped<IProjectRepository, ProjectRepository>();
 			services.AddScoped<IUserRepository, UserRepository>();
 			services.AddScoped<ISkillRepository, SkillRepository>();
