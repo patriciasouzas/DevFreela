@@ -76,13 +76,13 @@ namespace DevFreela.Infrastructure.Persistence.Migrations
                         name: "FK_Projects_Users_IdClient",
                         column: x => x.IdClient,
                         principalTable: "Users",
-                        principalColumn: "Id",
+                        principalColumn: "IdProject",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Projects_Users_IdFreelancer",
                         column: x => x.IdFreelancer,
                         principalTable: "Users",
-                        principalColumn: "Id",
+                        principalColumn: "IdProject",
                         onDelete: ReferentialAction.Restrict);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
@@ -104,12 +104,12 @@ namespace DevFreela.Infrastructure.Persistence.Migrations
                         name: "FK_UserSkills_Skills_SkillId",
                         column: x => x.SkillId,
                         principalTable: "Skills",
-                        principalColumn: "Id");
+                        principalColumn: "IdProject");
                     table.ForeignKey(
                         name: "FK_UserSkills_Users_IdSkill",
                         column: x => x.IdSkill,
                         principalTable: "Users",
-                        principalColumn: "Id",
+                        principalColumn: "IdProject",
                         onDelete: ReferentialAction.Restrict);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
@@ -133,13 +133,13 @@ namespace DevFreela.Infrastructure.Persistence.Migrations
                         name: "FK_ProjectComments_Projects_IdProject",
                         column: x => x.IdProject,
                         principalTable: "Projects",
-                        principalColumn: "Id",
+                        principalColumn: "IdProject",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_ProjectComments_Users_IdUser",
                         column: x => x.IdUser,
                         principalTable: "Users",
-                        principalColumn: "Id",
+                        principalColumn: "IdProject",
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");

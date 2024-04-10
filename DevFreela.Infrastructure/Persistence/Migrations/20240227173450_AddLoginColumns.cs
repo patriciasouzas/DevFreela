@@ -43,7 +43,7 @@ namespace DevFreela.Infrastructure.Persistence.Migrations
                 table: "UserSkills",
                 column: "SkillId",
                 principalTable: "Skills",
-                principalColumn: "Id",
+                principalColumn: "IdProject",
                 onDelete: ReferentialAction.Cascade);
         }
 
@@ -75,7 +75,7 @@ namespace DevFreela.Infrastructure.Persistence.Migrations
                 table: "UserSkills",
                 column: "SkillId",
                 principalTable: "Skills",
-                principalColumn: "Id");
+                principalColumn: "IdProject");
         }
     }
 }

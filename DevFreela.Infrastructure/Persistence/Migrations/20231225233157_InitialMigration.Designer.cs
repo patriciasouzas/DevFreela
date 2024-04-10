@@ -24,7 +24,7 @@ namespace DevFreela.Infrastructure.Persistence.Migrations
 
             modelBuilder.Entity("DevFreela.Core.Entities.Project", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdProject")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -57,7 +57,7 @@ namespace DevFreela.Infrastructure.Persistence.Migrations
                     b.Property<decimal>("TotalCost")
                         .HasColumnType("decimal(65,30)");
 
-                    b.HasKey("Id");
+                    b.HasKey("IdProject");
 
                     b.HasIndex("IdClient");
 
@@ -68,7 +68,7 @@ namespace DevFreela.Infrastructure.Persistence.Migrations
 
             modelBuilder.Entity("DevFreela.Core.Entities.ProjectComment", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdProject")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -85,7 +85,7 @@ namespace DevFreela.Infrastructure.Persistence.Migrations
                     b.Property<int>("IdUser")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("IdProject");
 
                     b.HasIndex("IdProject");
 
@@ -96,7 +96,7 @@ namespace DevFreela.Infrastructure.Persistence.Migrations
 
             modelBuilder.Entity("DevFreela.Core.Entities.Skill", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdProject")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -107,14 +107,14 @@ namespace DevFreela.Infrastructure.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.HasKey("Id");
+                    b.HasKey("IdProject");
 
                     b.ToTable("Skills");
                 });
 
             modelBuilder.Entity("DevFreela.Core.Entities.User", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdProject")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -135,14 +135,14 @@ namespace DevFreela.Infrastructure.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.HasKey("Id");
+                    b.HasKey("IdProject");
 
                     b.ToTable("Users");
                 });
 
             modelBuilder.Entity("DevFreela.Core.Entities.UserSkill", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdProject")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -155,7 +155,7 @@ namespace DevFreela.Infrastructure.Persistence.Migrations
                     b.Property<int?>("SkillId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("IdProject");
 
                     b.HasIndex("IdSkill");
 
