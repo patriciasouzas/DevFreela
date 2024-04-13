@@ -1,5 +1,6 @@
 using DevFreela.API.Filters;
 using DevFreela.Application.Commands.CreateProject;
+using DevFreela.Application.Consumers;
 using DevFreela.Application.Validators;
 using DevFreela.Core.Repositories;
 using DevFreela.Core.Services;
@@ -40,6 +41,8 @@ namespace DevFreela.API
 			{
 				options.UseMySql(connectionString, new MySqlServerVersion(new System.Version(5, 7)));
 			});
+
+			services.AddHostedService<PaymentApprovedConsumer>();
 
 			services.AddHttpClient();
 
