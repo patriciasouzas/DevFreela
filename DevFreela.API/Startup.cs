@@ -69,7 +69,11 @@ namespace DevFreela.API
 
 			services.AddSwaggerGen(c =>
 			{
-				c.SwaggerDoc("v1", new OpenApiInfo { Title = "DevFreela.API", Version = "v1" });
+				c.SwaggerDoc("v1", new OpenApiInfo
+				{
+					Title = "DevFreela.API",
+					Version = "v1"
+				});
 
 				c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
 				{
@@ -124,7 +128,7 @@ namespace DevFreela.API
 			{
 				app.UseDeveloperExceptionPage();
 				app.UseSwagger();
-				app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DevFreela.API v1"));
+				app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Projeto DevFreela v1"));
 			}
 			else
 			{
@@ -133,11 +137,11 @@ namespace DevFreela.API
 				app.UseHsts();
 			}
 
-			app.UseSwagger();
+			/*app.UseSwagger();
 			app.UseSwaggerUI(c =>
 			{
 				c.SwaggerEndpoint("/swagger/v1/swagger.json", "Projeto DevFreela v1");
-			});
+			});*/
 
 			app.UseHttpsRedirection();
 			app.UseStaticFiles();
