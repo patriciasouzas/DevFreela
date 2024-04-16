@@ -15,24 +15,11 @@ namespace DevFreela.Infrastructure.Payments
 		}
 		public void ProcessPayment(PaymentInfoDto paymentInfDTO)
 		{
-			//var url = $"{_paymentsBaseUrl}/api/payments";
 			var paymentInfoJson = JsonSerializer.Serialize(paymentInfDTO);
 
 			var paymentInfoBytes = Encoding.UTF8.GetBytes(paymentInfoJson);
 
 			_messageBusService.Publish(QUEUE_NAME, paymentInfoBytes);
-
-			/*var paymentInfoContent = new StringContent(
-				paymentInfoJson,
-				Encoding.UTF8,
-				"application/json"
-				);
-
-			var httpClient = _httpClientFactory.CreateClient("Payments");
-
-			var response = await httpClient.PostAsync(url, paymentInfoContent);
-
-			return response.IsSuccessStatusCode;*/
 		}
 	}
 }
